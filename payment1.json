@@ -1,0 +1,54 @@
+{
+    "entity": "event",
+    "account_id": "acc_EujfNEfEnXXySM",
+    "event": "payment.authorized",
+    "contains": [
+        "payment"
+    ],
+    "payload": {
+        "payment": {
+            "entity": {
+                "id": "pay_F1cc4BHRZjka5k",
+                "entity": "payment",
+                "amount": 49900,
+                "currency": "INR",
+                "status": "authorized",
+                "order_id": null,
+                "invoice_id": null,
+                "international": false,
+                "method": "card",
+                "amount_refunded": 0,
+                "refund_status": null,
+                "captured": false,
+                "description": "Thank you for nothing. Please give us some money",
+                "card_id": "card_EwS94Rz5hqcL4B",
+                "card": {
+                    "id": "card_EwS94Rz5hqcL4B",
+                    "entity": "card",
+                    "name": "Mehul",
+                    "last4": "1111",
+                    "network": "Visa",
+                    "type": "debit",
+                    "issuer": null,
+                    "international": false,
+                    "emi": false
+                },
+                "bank": null,
+                "wallet": null,
+                "vpa": null,
+                "email": "ok@gmail.com",
+                "contact": "+919849898585",
+                "notes": [],
+                "fee": null,
+                "tax": null,
+                "error_code": null,
+                "error_description": null,
+                "error_source": null,
+                "error_step": null,
+                "error_reason": null,
+                "created_at": 1591945022
+            }
+        }
+    },
+    "created_at": 1591945024
+}
