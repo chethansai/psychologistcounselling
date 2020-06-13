@@ -90,7 +90,7 @@ const Dashboard = ({
     console.log(data);
 
     const options = {
-      key: __DEV__ ? 'rzp_test_LLMu3MmYvL8st8' : 'PRODUCTION_KEY',
+      key: __DEV__ ? 'rzp_test_LLMu3MmYvL8st8' : 'rzp_test_LLMu3MmYvL8st8',
       currency: data.currency,
       amount: data.amount.toString(),
 
