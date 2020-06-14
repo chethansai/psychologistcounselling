@@ -11,7 +11,7 @@ const Admin = ({ getSessions, sessions }) => {
   }, [getSessions]);
   async function available() {
     {
-      await fetch('http://localhost:5000/available', {
+      await fetch('/available', {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ const Admin = ({ getSessions, sessions }) => {
 
   async function unavailable() {
     {
-      await fetch('http://localhost:5000/unavailable', {
+      await fetch('/unavailable', {
         method: 'POST', // or 'PUT'
         headers: {
           'Content-Type': 'application/json'

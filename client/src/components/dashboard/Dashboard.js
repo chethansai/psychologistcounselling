@@ -50,7 +50,7 @@ const Dashboard = ({
 
   async function gotoroom() {
     const linktoroom = { uuser: user };
-    await fetch('http://localhost:5000/gotoroom', {
+    await fetch('/gotoroom', {
       method: 'POST', // or 'PUT'
       headers: {
         'Content-Type': 'application/json'
@@ -83,7 +83,7 @@ const Dashboard = ({
       return;
     }
 
-    const data = await fetch('http://localhost:5000/razorpay', {
+    const data = await fetch('/razorpay', {
       method: 'POST'
     }).then((t) => t.json());
 
@@ -100,7 +100,7 @@ const Dashboard = ({
       handler: async function (response) {
         alert(response.razorpay_payment_id);
         const data = { paymentid: response.razorpay_payment_id, uuser: user };
-        await fetch('http://localhost:5000/sessions', {
+        await fetch('/sessions', {
           method: 'POST', // or 'PUT'
           headers: {
             'Content-Type': 'application/json'
