@@ -93,7 +93,7 @@ app.get('/logo.svg', (req, res) => {
   res.sendFile(path.join(__dirname, 'logo.svg'));
 });
 
-app.post('/verification', (req, res) => {
+app.post('/verification', async (req, res) => {
   // do a validation
   const secret = '12345678';
 
@@ -110,6 +110,11 @@ app.post('/verification', (req, res) => {
   if (digest === req.headers['x-razorpay-signature']) {
     console.log('request is legit');
     // process it
+    const adminn = await admin.findById('5ed915f5282570ce2c943e44');
+    const addsession = { bill: JSON.stringify(req.body, null, 4) };
+
+    adminn.paymentbillsviawebhook.unshift(addsession);
+    await adminn.save();
     require('fs').writeFileSync(
       'payment1.json',
       JSON.stringify(req.body, null, 4)
@@ -122,7 +127,7 @@ app.post('/verification', (req, res) => {
 
 app.post('/razorpay', async (req, res) => {
   const payment_capture = 1;
-  const amount = 499;
+  const amount = 1999;
   const currency = 'INR';
 
   const options = {

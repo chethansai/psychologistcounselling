@@ -4,10 +4,16 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getSessions } from '../../actions/admin';
 import AdminItem from './AdminItem';
-
-const Admin = ({ getSessions, sessions }) => {
+import { getPsychologistavailablity } from '../../actions/dashboard';
+const Admin = ({
+  getSessions,
+  sessions,
+  getPsychologistavailablity,
+  psychologistavailablity
+}) => {
   useEffect(() => {
     getSessions();
+    getPsychologistavailablity();
   }, [getSessions]);
   async function available() {
     {
@@ -27,6 +33,7 @@ const Admin = ({ getSessions, sessions }) => {
           console.error('Error:', error);
         });
     }
+    window.location.reload();
   }
 
   async function unavailable() {
@@ -47,6 +54,7 @@ const Admin = ({ getSessions, sessions }) => {
           console.error('Error:', error);
         });
     }
+    window.location.reload();
   }
   function sessionsrendering() {
     var e = getSessions();
@@ -83,6 +91,9 @@ const Admin = ({ getSessions, sessions }) => {
       <div>
         <div>
           <h1>Availablity</h1>
+          <div>
+            {psychologistavailablity ? <p>Available</p> : <p>Unavailable</p>}
+          </div>
           <button
             className="btn btn-danger"
             onClick={() => available()}
@@ -116,7 +127,11 @@ Admin.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  sessions: state.admin.sessions
+  sessions: state.admin.sessions,
+  psychologistavailablity: state.dashboard.psychologistavailablity
 });
 
-export default connect(mapStateToProps, { getSessions })(Admin);
+export default connect(mapStateToProps, {
+  getSessions,
+  getPsychologistavailablity
+})(Admin);

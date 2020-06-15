@@ -46,7 +46,7 @@ const Dashboard = ({
     getRoomidstatus();
     getPsychologistavailablity();
   }, [getCurrentProfile]);
-  const [name, setName] = useState('Mehul');
+  const [name, setName] = useState('');
 
   async function gotoroom() {
     const linktoroom = { uuser: user };
@@ -94,8 +94,8 @@ const Dashboard = ({
       currency: data.currency,
       amount: data.amount.toString(),
 
-      name: 'Donation',
-      description: 'Thank you for nothing. Please give us some money',
+      name: 'Psychologist Help ',
+      description: 'One on One 1 hour psychology help session over video',
 
       handler: async function (response) {
         alert(response.razorpay_payment_id);
@@ -119,8 +119,8 @@ const Dashboard = ({
       },
       prefill: {
         name,
-        email: 'ok@gmail.com',
-        phone_number: '8555042103'
+        email: '',
+        phone_number: ''
       }
     };
     const paymentObject = new window.Razorpay(options);
@@ -156,6 +156,10 @@ const Dashboard = ({
       {true ? (
         <Fragment>
           <div className="my-2">
+            <p>
+              One on One 1 hour psychoogist help session over video at
+              Rupees-1999/-Only
+            </p>
             <div>
               {psychologistavailablity ? (
                 <div>
@@ -179,9 +183,15 @@ const Dashboard = ({
                   )}
                 </div>
               ) : (
-                <div></div>
+                <div>
+                  Currently our psychologists are busy helping others. Please
+                  wait!
+                </div>
               )}
             </div>
+          </div>
+          <div>
+            {' '}
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus" /> Delete My Account
             </button>

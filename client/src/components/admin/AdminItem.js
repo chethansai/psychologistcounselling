@@ -20,7 +20,10 @@ const AdminItem = ({
         Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
       </p>
       <button
-        onClick={() => deleteSession(_id, user)}
+        onClick={() => {
+          deleteSession(_id, user);
+          window.location.reload();
+        }}
         type="button"
         className="btn btn-danger"
       >

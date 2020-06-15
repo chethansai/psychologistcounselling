@@ -7,6 +7,7 @@ const Adminschema = new mongoose.Schema({
   availablity: {
     type: Boolean
   },
+  paymentbillsviawebhook: [{}],
   allsessions: [
     {
       user: {
