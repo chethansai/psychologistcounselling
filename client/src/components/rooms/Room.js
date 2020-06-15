@@ -115,10 +115,15 @@ const Room = (props) => {
   return (
     <Fragment>
       <Container>
+        <h1>
+          <strong>Counselling Room</strong>
+        </h1>
+
         <StyledVideo muted ref={userVideo} autoPlay playsInline />
         {peers.map((peer, index) => {
           return <Video key={index} peer={peer} />;
         })}
+        <p>Please wait until the psychologist joins the room</p>
       </Container>{' '}
       <Fragment>
         <div>
