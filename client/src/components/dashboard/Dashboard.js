@@ -98,7 +98,6 @@ const Dashboard = ({
       description: 'One on One 1 hour psychology help session over video',
 
       handler: async function (response) {
-        alert(response.razorpay_payment_id);
         const data = { paymentid: response.razorpay_payment_id, uuser: user };
         await fetch('/sessions', {
           method: 'POST', // or 'PUT'
@@ -114,7 +113,7 @@ const Dashboard = ({
           .catch((error) => {
             console.error('Error:', error);
           });
-        alert(response.razorpay_signature);
+
         window.location.reload();
       },
       prefill: {
