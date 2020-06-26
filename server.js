@@ -85,8 +85,8 @@ io.on('connection', (socket) => {
 });
 
 const razorpay = new Razorpay({
-  key_id: 'rzp_test_LLMu3MmYvL8st8',
-  key_secret: 'YJ9ARwtlmvDETa2I42TyQWp4'
+  key_id: 'rzp_live_3GrJAUlyCczjTl',
+  key_secret: 'Imss4UYoMJIElxucksnJnBjm'
 });
 
 app.get('/logo.svg', (req, res) => {

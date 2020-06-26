@@ -92,7 +92,7 @@ const Dashboard = ({
     console.log(data);
 
     const options = {
-      key: __DEV__ ? 'rzp_test_LLMu3MmYvL8st8' : 'rzp_test_LLMu3MmYvL8st8',
+      key: __DEV__ ? 'rzp_test_LLMu3MmYvL8st8' : 'rzp_live_3GrJAUlyCczjTl',
       currency: data.currency,
       amount: data.amount.toString(),
 
@@ -196,7 +196,7 @@ const Dashboard = ({
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus" /> Delete My Account
             </button>
-            <Badge variant="secondary">Contact:094905 49227</Badge>
+            <Badge variant="secondary">Contact:+91 8328247738</Badge>
             <p> </p>
           </div>
         </Fragment>

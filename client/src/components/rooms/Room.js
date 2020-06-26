@@ -129,7 +129,7 @@ const Room = (props) => {
       </Container>{' '}
       <Fragment>
         <div>
-          <p>Contact:094905 49227 for help</p>
+          <p>Contact:+91 8328247738 for help</p>
           <Link to={`/dashboard`} className="btn btn-primary">
             Go To Dashboard
           </Link>
