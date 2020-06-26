@@ -3,6 +3,8 @@ import io from 'socket.io-client';
 import Peer from 'simple-peer';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Badge } from 'react-bootstrap';
+
 const Container = styled.div`
   padding: 20px;
   display: flex;
@@ -127,6 +129,7 @@ const Room = (props) => {
       </Container>{' '}
       <Fragment>
         <div>
+          <p>Contact:094905 49227 for help</p>
           <Link to={`/dashboard`} className="btn btn-primary">
             Go To Dashboard
           </Link>

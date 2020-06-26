@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import DashboardActions from './DashboardActions';
+import { Badge } from 'react-bootstrap';
+
 import Experience from './Experience';
 import Education from './Education';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
@@ -156,7 +158,7 @@ const Dashboard = ({
         <Fragment>
           <div className="my-2">
             <p>
-              One on One 1 hour psychoogist help session over video at
+              One on One 1 hour psychologist help session over video at
               Rupees-1999/-Only
             </p>
             <div>
@@ -194,6 +196,8 @@ const Dashboard = ({
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fas fa-user-minus" /> Delete My Account
             </button>
+            <Badge variant="secondary">Contact:094905 49227</Badge>
+            <p> </p>
           </div>
         </Fragment>
       ) : (
